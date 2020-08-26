@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title slot="start">
+      <span (click)="navRootPage()" style="cursor: pointer;" class="ion-padding">Swapiku</span>
+      <span (click)="navFilms()" style="cursor: pointer;" class="ion-padding">Films</span>
+      <span (click)="navRootPage()" style="cursor: pointer;" class="ion-padding">People</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col size="12" size-md="4" size-lg="3" *ngFor="let CHARACTER of LIST_OF_CHARACTER">
+      <ion-card>
+        <ion-card>
+          <ion-item>
+            <ion-card-title>{{CHARACTER.name}}</ion-card-title>
+            <ion-button (click)="detailCharacterHandler(CHARACTER.url)" fill="outline" slot="end">See More</ion-button>
+          </ion-item>
+        </ion-card>
+        <ion-card-content>
+          <ion-row>
+            <ion-col size="6" size-md="6" size-lg="6">
+              Birth Year
+            </ion-col>
+            <ion-col size="6" size-md="6" size-lg="6">
+              {{ CHARACTER.birth_year}}
+            </ion-col>
+            <ion-col size="6" size-md="6" size-lg="6">
+              Eye Color
+            </ion-col>
+            <ion-col size="6" size-md="6" size-lg="6">
+              {{ CHARACTER.eye_color}}
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
